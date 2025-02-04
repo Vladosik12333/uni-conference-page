@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Innovations for a Sustainable Future – A Holistic Approach</title>
+    <link rel="stylesheet" th:href="@{normalize.css}">
+    <link rel="stylesheet" th:href="@{index.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+          rel="stylesheet">
+    <link rel="icon" th:href="@{favicon.png}">
+</head>
+<body>
+<main class="container main">
+    <header class="header">
+        <img th:if="${language == 'pl'}" th:src="@{logo-header-pl.png}" alt="Logo"
+             width="200" height="80">
+
+        <img th:unless="${language == 'pl'}" th:src="@{logo-header-en.png}" alt="Logo"
+             width="200" height="80">
+
+        <form action="" method="get" onchange="this.submit()">
+            <label for="pl"
+                   class="header__button"
+                   th:classappend="${language == 'pl'} ? 'header__button--active'">
+                PL
+                <input type="radio" name="lang" value="pl" id="pl" class="hidden"/>
+            </label>
+            <label for="en"
+                   class="header__button"
+                   th:classappend="${language == 'en'} ? 'header__button--active'">
+                EN
+                <input type="radio" name="lang" value="en" id="en" class="hidden"/>
+            </label>
+        </form>
+    </header>
+
+    <section class="announcement">
+        <h1 class="announcement__title" th:text="#{announcement.title}">Innovations for a
+            Sustainable Future – A
+            Holistic
+            Approach</h1>
+
+        <div class="announcement__content">
+            <th:block th:switch="${language ?: 'en'}">
+                <img th:case="pl" th:src="@{invitation-pl.png}" alt="Invitation" width="40%"/>
+                <img th:case="en" th:src="@{invitation-en.png}" alt="Invitation" width="40%"/>
+                <img th:case="*" th:src="@{invitation-en.png}" alt="Invitation" width="40%"/>
+            </th:block>
+
+            <div class="announcement__text">
+                <ul class="general-list">
+                    <li>
+                        <p th:with="nameSpan='<span class=\'general-list__title\'>' + #{announcement.general.name} + '</span>'"
+                           th:utext="#{announcement.general.welcome(${nameSpan})}">
+                            Default content if localization fails.
+                        </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.general.details}">This conference will provide a
+                            unique opportunity to exchange research
+                            results, knowledge, experiences, and the latest achievements in the
+                            field of
+                            sustainable development across various disciplines, including
+                            engineering
+                            and
+                            technical sciences, social sciences, natural sciences, and the arts.
+                        </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.general.encourage}">We encourage you to submit
+                            proposals
+                            for presentations and scientific
+                            publications, as well as to help disseminate information about the
+                            conference.
+                        </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.general.registerationForm}">You can find all the
+                            relevant
+                            registration information in the
+                            registration form:
+                        </p>
+                        <a
+                                target="_blank"
+                                class="general-list__link"
+                                th:href="${registrationLink}"
+                                th:text="${registrationLink}">https://forms.office.com/Pages/ResponsePage
+                            .aspx?id=e3CD5X4BBEGlzxqBqHg_J5sjv46TsoZFqwLdNG26vYlURjBRWVZFNFYzMUlMV1c3WDVGSkFIVVdFUy4u</a>
+                    </li>
+                </ul>
+
+                <ul class="key-dates-list">
+                    <li>
+                        <p th:text="#{announcement.keyDates.general}"
+                           class="key-dates-list__general">
+                            Key dates:
+                        </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.keyDates.registration}">
+                            Participant registration deadline: February 28, 2025 </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.keyDates.admission}">
+                            Abstract submission deadline: March 31, 2025 </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.keyDates.invitation}">
+                            We hope this conference will serve as an inspiration for creating
+                            innovative
+                            solutions and fostering international scientific collaborations.
+                    </li>
+                </ul>
+
+                <ul class="questions-list">
+                    <li>
+                        <p th:text="#{announcement.questions.general}">
+                            If you have any questions, please feel free to contact: </p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.questions.person}">
+                            Dr. Eng. Ewelina Pałucka, Prof. ATA</p>
+                    </li>
+                    <li>
+                        <p th:text="#{announcement.questions.title}">
+                            Vice-Dean of the Faculty of
+                            Engineering and Management
+                            University of Technology and Arts in Applied Sciences in Warsaw </p>
+                    </li>
+                    <li class="questions-list__contact-details">
+                        <p th:text="#{announcement.questions.email}">
+                            Email:
+                        </p>
+                        <a th:href="'mailto:' + ${email}"
+                           th:text="${email}">
+                            ewelina.palucka@akademiata.pl
+                        </a>
+                    </li>
+                    <li class="questions-list__contact-details">
+                        <p th:text="#{announcement.questions.phone}">
+                            Phone:
+                        </p>
+                        <a th:href="'tel:' + ${phoneNumber}"
+                           th:text="${phoneNumber}"
+                        >+48 601 328 879</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
