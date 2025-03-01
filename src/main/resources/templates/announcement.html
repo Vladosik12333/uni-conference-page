@@ -151,6 +151,19 @@
         </div>
     </section>
 
+    <section class="committee">
+        <h1 class="committee__title" th:text="#{committee.title}">Scientific Committee of the
+            Conference</h1>
+
+        <ul class="committee__list"
+            th:with="professors=${#strings.listSplit(#messages.msg('committee.composition'), '\\|')}">
+            <li th:each="professor, index : ${professors}">
+                <p class="committee__text-item"
+                   th:text="${(index.index + 1) + '. ' + professor}"></p>
+            </li>
+        </ul>
+    </section>
+
     <section class="partners">
         <h1 class="partners__title" th:text="#{partners.title}">Partners:</h1>
 

@@ -141,6 +141,24 @@ section {
     gap: 40px;
 }
 
+.committee__title {
+    font-weight: 600;
+    text-align: center;
+}
+
+.committee__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 5px;
+}
+
+.committee__text-item {
+    text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
     .announcement__content {
         flex-direction: column;
