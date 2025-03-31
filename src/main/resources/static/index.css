@@ -130,7 +130,7 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 80px;
-    gap: 80px;
+    gap: 40px;
 }
 
 .partners__small {
@@ -159,6 +159,33 @@ section {
     text-align: center;
 }
 
+.header__actions {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.header__program-button {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6d2d;
+    padding: 0 20px;
+}
+
+.header__program-button:hover {
+    cursor: pointer;
+}
+
+.header__program-button > a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
 @media screen and (max-width: 1024px) {
     .announcement__content {
         flex-direction: column;
@@ -174,5 +201,9 @@ section {
 
     .questions-list__contact-details {
         justify-content: center;
+    }
+
+    .partners__content {
+        flex-direction: column;
     }
 }

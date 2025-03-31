@@ -20,20 +20,35 @@
         <img th:unless="${language == 'pl'}" th:src="@{logo-header-en.png}" alt="Logo"
              width="200" height="80">
 
-        <form action="" method="get" onchange="this.submit()">
-            <label for="pl"
-                   class="header__button"
-                   th:classappend="${language == 'pl'} ? 'header__button--active'">
-                PL
-                <input type="radio" name="lang" value="pl" id="pl" class="hidden"/>
-            </label>
-            <label for="en"
-                   class="header__button"
-                   th:classappend="${language == 'en'} ? 'header__button--active'">
-                EN
-                <input type="radio" name="lang" value="en" id="en" class="hidden"/>
-            </label>
-        </form>
+        <div class="header__actions">
+            <div class="header__program-button">
+                <th:block th:switch="${language ?: 'en'}">
+                    <a th:case="pl" th:href="@{program_pl.pdf}"
+                       th:text="#{announcement.program.text}" target="_blank">Program
+                    </a>
+                    <a th:case="en" th:href="@{program_en.pdf}"
+                       th:text="#{announcement.program.text}" target="_blank">Program</a>
+                    <a th:case="*" th:href="@{program_en.pdf}"
+                       th:text="#{announcement.program.text}" target="_blank">Program</a>
+                </th:block>
+            </div>
+
+            <form action="" method="get" onchange="this.submit()">
+                <label for="pl"
+                       class="header__button"
+                       th:classappend="${language == 'pl'} ? 'header__button--active'">
+                    PL
+                    <input type="radio" name="lang" value="pl" id="pl" class="hidden"/>
+                </label>
+                <label for="en"
+                       class="header__button"
+                       th:classappend="${language == 'en'} ? 'header__button--active'">
+                    EN
+                    <input type="radio" name="lang" value="en" id="en" class="hidden"/>
+                </label>
+            </form>
+
+        </div>
     </header>
 
     <section class="announcement">
@@ -179,6 +194,14 @@
                  alt="Research Network Sociology of Education RN10 of European Sociological Association"
                  height="200px"
             />
+
+            <div class="partners__small">
+                <img th:src="@{logo_PSML.png}"
+                     alt="Polskie Stowarzyszenie Menedżerów Logistyki i Zakupów"
+                     height="100px"/>
+                <img th:src="@{logo_TY_100.png}" alt="Top Young 100"
+                     height="100px"/>
+            </div>
         </div>
     </section>
 </main>
