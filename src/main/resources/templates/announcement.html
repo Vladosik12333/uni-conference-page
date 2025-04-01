@@ -11,6 +11,7 @@
           rel="stylesheet">
     <link rel="icon" th:href="@{favicon.png}">
 </head>
+
 <body>
 <main class="container main">
     <header class="header">
@@ -167,8 +168,8 @@
     </section>
 
     <section class="committee">
-        <h1 class="committee__title" th:text="#{committee.title}">Scientific Committee of the
-            Conference</h1>
+        <h2 class="committee__title" th:text="#{committee.title}">Scientific Committee of the
+            Conference</h2>
 
         <ul class="committee__list"
             th:with="professors=${#strings.listSplit(#messages.msg('committee.composition'), '\\|')}">
@@ -180,7 +181,7 @@
     </section>
 
     <section class="partners">
-        <h1 class="partners__title" th:text="#{partners.title}">Partners:</h1>
+        <h2 class="partners__title" th:text="#{partners.title}">Partners:</h2>
 
         <div class="partners__content">
             <div class="partners__small">

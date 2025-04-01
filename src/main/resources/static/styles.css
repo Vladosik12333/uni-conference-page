@@ -61,6 +61,7 @@ section {
 
 .announcement__title {
     font-weight: 600;
+    font-size: 32px;
     text-align: center;
     width: 80%;
 }
@@ -122,6 +123,7 @@ section {
 
 .partners__title {
     font-weight: 600;
+    font-size: 32px;
     text-align: center;
 }
 
@@ -143,6 +145,7 @@ section {
 
 .committee__title {
     font-weight: 600;
+    font-size: 32px;
     text-align: center;
 }
 
