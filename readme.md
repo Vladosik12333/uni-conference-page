@@ -7,9 +7,9 @@ different devices.
 ## Screenshots
 
 <p align="center">
-![Image 1](images/img.png)
-![Image 2](images/img_1.png)
-![Image 3](images/img_2.png)
+  <img src="images/img.png" alt="Image 1" />
+  <img src="images/img_1.png" alt="Image 2" />
+  <img src="images/img_2.png" alt="Image 3" />
 </p>
 
 ## Installation
