@@ -1,8 +1,6 @@
 # Blog Service Java
 
-The Java simple MVC application that serves for announcement of the academic conference for
-university. Also, the application includes functionality such as localization and adaptation for 
-different devices.
+The Java simple MVC application serves as an announcement of the university's academic conference. Also, the application includes functionality such as localization and adaptation for different devices.
 
 ## Screenshots
 
