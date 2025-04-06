@@ -26,7 +26,9 @@ The Java simple MVC application serves as an announcement of the university's ac
 Spring Boot 3.4.1">
 <img src="https://img.shields.io/badge/Spring Boot-Web MVC-green.svg" alt="Spring Boot - Web MVC">
 <img src="https://img.shields.io/badge/Library-Thymeleaf-red.svg" alt="Library - Thymeleaf">
-<img src="https://img.shields.io/badge/Library-Lombok-blue.svg" alt="Library - Lombok">
+<img src="https://img.shields.io/badge/Library-Lombok-red.svg" alt="Library - Lombok">
+<img src="https://img.shields.io/badge/Technology-Docker-blue.svg" alt="Technology - Docker">
+
 </p>
 
 ## Deployment
