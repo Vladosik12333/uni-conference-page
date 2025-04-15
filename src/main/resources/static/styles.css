@@ -117,8 +117,12 @@ section {
     gap: 5px;
 }
 
-.partners {
+.committee {
+    margin-bottom: 30px;
+}
 
+.partners {
+    margin-top: 30px;
 }
 
 .partners__title {

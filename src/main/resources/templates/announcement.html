@@ -29,8 +29,6 @@
                     </a>
                     <a th:case="en" th:href="@{program_en.pdf}"
                        th:text="#{announcement.program.text}" target="_blank">Program</a>
-                    <a th:case="*" th:href="@{program_en.pdf}"
-                       th:text="#{announcement.program.text}" target="_blank">Program</a>
                 </th:block>
             </div>
 
@@ -62,7 +60,6 @@
             <th:block th:switch="${language ?: 'en'}">
                 <img th:case="pl" th:src="@{invitation-pl.png}" alt="Invitation" width="40%"/>
                 <img th:case="en" th:src="@{invitation-en.png}" alt="Invitation" width="40%"/>
-                <img th:case="*" th:src="@{invitation-en.png}" alt="Invitation" width="40%"/>
             </th:block>
 
             <div class="announcement__text">
@@ -179,6 +176,16 @@
             </li>
         </ul>
     </section>
+
+    <img th:if="${language == 'pl'}" th:src="@{logo_warsaw.png}"
+         alt="Warsaw Logo"
+         height="300"
+    />
+
+    <img th:unless="${language == 'pl'}" th:src="@{logo_warsaw_en.png}"
+         alt="Warsaw Logo"
+         height="300"
+    />
 
     <section class="partners">
         <h2 class="partners__title" th:text="#{partners.title}">Partners:</h2>
